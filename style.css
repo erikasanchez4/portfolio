@@ -1,0 +1,436 @@
+body {
+    margin: 0;
+    /*elimina el margen automático del navegador*/
+    background-color: #F3F0F8;
+    color: #1f2937;
+    /*color de texto*/
+    font-family: Arial, sans-serif;
+
+}
+
+html {
+    scroll-behavior: smooth;
+    /*hace que el scroll sea suave*/
+}
+
+.inicio {
+    position: relative;
+    /* position: relative; mantiene el elemento en su lugar normal, pero además lo convierte en una referencia para elementos hijos que tengan position: absolute.*/
+    height: 100vh;
+    overflow: hidden;
+}
+
+.videoInicio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inicio-texto {
+    position: absolute;
+    /*saca al elemento de su flujo normal y te permite colocarlo en una posición exacta usando top, left, right o bottom.*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+
+    z-index: 2;
+}
+
+.inicio::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.intro {
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.inicio-texto h1 {
+    font-size: 64px;
+    margin: 10px 0;
+    color: black;
+}
+
+.inicio-texto p {
+    color: black;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+
+    gap: 80px;
+    padding: 100px 0;
+}
+
+.about-texto {
+    max-width: 750px;
+}
+
+.about-texto h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-texto p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.about-imagen img {
+    width: 350px;
+    height: 430px;
+    border-radius: 20px;
+    object-fit: cover;
+    /*hace que la imagen conserve buenas proporciones aunque le demos un tamano fijo*/
+}
+
+
+.boton {
+    display: inline-block;
+    background-color: #773ff9;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 15px;
+
+}
+
+.boton:hover {
+    /*cuando el mouse pasa por encima del boton*/
+    background-color: #773ff9;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.05);
+
+    position: sticky;
+    /*permite que el nav se quede fijo en la parte superior de la pantalla al hacer scroll*/
+    top: 0;
+    /*lo fija en la parte superior*/
+    z-index: 1000;
+    /*lo pone por encima de otros elementos*/
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1f2937;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #773ff9;
+
+}
+
+
+nav h2 {
+    font-size: 28px;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#skills,
+#proyectos,
+#coursework,
+#certifications {
+    /*id del contenedor de habilidades se usa #*/
+    padding: 90px 5%;
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.skills-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*agrega una transición suave al hacer hover*/
+    /*text-align: center;*/
+}
+
+.skills-card:hover {
+    transform: translateY(-8px);
+    /*mueve la tarjeta hacia arriba cuando la tocas*/
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.12);
+    /*cambia la sombra al hacer hover*/
+}
+
+.skills-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.skills-card p {
+    margin: 10px 0;
+}
+
+#proyectos h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.proyectos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.proyecto-card {
+    background-color: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.08);
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*agrega una transición suave al hacer hover*/
+}
+
+.proyecto-card:hover {
+    transform: translateY(-8px);
+    /*mueve la tarjeta hacia arriba cuando la tocas*/
+    box-shadow: 0 8px 20px rgb(0, 0, 0, 0.12);
+    /*cambia la sombra al hacer hover*/
+}
+
+.proyecto-card h3 {
+    margin-bottom: 0;
+    font-size: 22px;
+}
+
+.proyecto-card p {
+    line-height: 1.6;
+}
+
+.proyecto-card .boton {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.tecnologias {
+    font-size: 14px;
+    font-weight: bold;
+    color: #773ff9;
+    margin-top: 20px;
+}
+
+.coursework-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    max-width: 1200px;
+    /*evita que el contenido se estire por toda la pantala en una compuitadora grande*/
+    margin: auto;
+    /*centra el contenedor*/
+}
+
+#coursework h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.coursework-container p {
+    background-color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin: 0px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contacto {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: #ECE7F2;
+}
+
+
+#contacto h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+#contacto p {
+    margin-bottom: 30px;
+}
+
+.contacto-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contacto-links a {
+    /*selecciona todos los enlaces(<a>) dentro del contenedor de contacto*/
+    text-decoration: none;
+    color: #773ff9;
+    font-weight: bold;
+    padding: 10px 16px;
+    border: 1px solid #773ff9;
+    border-radius: 8px;
+}
+
+#certifications h2 {
+
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.certifications-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.certification-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgb(0, 0, 0, 0.08);
+    width: 280px;
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease; agrega una transición suave al hacer hover*/
+}
+
+footer {
+    background-color: #1f2937;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+}
+
+/*hacerlo responsive*/
+
+@media (max-width: 768px) {
+    /*aplica estas reglas solo cuando la pantalla mida 768px o menos*/
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 18px;
+        padding: 0;
+        margin: 10px 0 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav h2 {
+        align-self: flex-start;
+    }
+
+    .inicio-texto {
+        max-width: 100%;
+        /*hace que ocupe todo el ancho disponible*/
+    }
+
+    .inicio h1 {
+        font-size: 42px;
+    }
+
+    .about {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        width: 90%;
+        padding: 70px 0;
+
+    }
+
+    .about-imagen img {
+        width: 280px;
+        height: 350px;
+    }
+
+    .proyectos-container,
+    .skills-container,
+    .certifications-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 90%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .contacto-links,
+    .coursework-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-card,
+    .proyecto-card,
+    .certification-card {
+        width: auto;
+        max-width: none;
+        box-sizing: border-box;
+    }
+}
