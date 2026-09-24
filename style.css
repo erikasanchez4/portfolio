@@ -385,6 +385,8 @@ footer p {
 
     nav h2 {
         align-self: flex-start;
+        margin-bottom: 14px;
+
     }
 
     .inicio-texto {
