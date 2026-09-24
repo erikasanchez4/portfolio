@@ -57,13 +57,13 @@ html {
 }
 
 .inicio-texto h1 {
-    font-size: 64px;
+    font-size: 100px;
     margin: 10px 0;
-    color: black;
+    color: white;
 }
 
 .inicio-texto p {
-    color: black;
+    color: white;
 }
 
 .about {
