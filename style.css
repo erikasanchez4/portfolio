@@ -365,45 +365,56 @@ footer p {
     /*aplica estas reglas solo cuando la pantalla mida 768px o menos*/
 
     nav {
-        padding: 18px 20px;
+        padding: 15px 20px;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 28px;
+        align-items: center;
+        gap: 12px;
     }
 
     nav h2 {
         margin: 0;
+        font-size: 28px;
     }
 
     nav ul {
         display: flex;
-        flex-direction: row;
-        gap: 18px;
-
-        list-style: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
         padding: 0;
         margin: 0;
-
-        width: 100%;
-        overflow-x: auto;
-        white-space: nowrap;
     }
 
-    nav ul::-webkit-scrollbar {
-        display: none;
+    nav ul li a {
+        font-size: 14px;
     }
 
-    nav a {
-        flex-shrink: 0;
+    .inicio {
+        height: calc(100vh - 120px);
+        min-height: 600px;
     }
 
     .inicio-texto {
-        max-width: 100%;
-        /*hace que ocupe todo el ancho disponible*/
+        width: 90%;
+        top: 48%;
     }
 
-    .inicio h1 {
-        font-size: 42px;
+    .inicio-texto p:first-child {
+        font-size: 32px;
+        margin-bottom: 5px;
+    }
+
+    .inicio-texto h1 {
+        font-size: 48px;
+        line-height: 1.05;
+        margin: 5px 0 15px;
+    }
+
+    .inicio-texto p:last-child {
+        font-size: 18px;
+        line-height: 1.4;
+        max-width: 350px;
+        margin: auto;
     }
 
     .about {
